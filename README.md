@@ -26,6 +26,12 @@ git clone https://github.com/onedebos/epawa-rails
 bundle install
 ```
 
+- Install the Node packages
+
+```
+yarn install
+```
+
 - You may need webpack
 
 ```
@@ -35,7 +41,7 @@ rails webpacker:install
 - Create and migrate the DB
 
 ```
-rails db:create && db:migrate
+rails db:create && rails db:migrate
 ```
 
 - Seed the DB
@@ -55,6 +61,12 @@ rails s -p 3001
 ### Automated Tests
 
 - Currently, there are no automated tests avaailable for this project. This will be implemented at a later date.
+
+### Scheduling
+
+- Users are automatically debited and credited each day. see log/whenever.log for logfiles.
+- Whenever cron jobs can be updated from config/schedule.rb
+- When updated, run `bundle exec whenever --update-crontab` to notify whenever of the changes.
 
 ### Endpoints
 
